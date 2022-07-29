@@ -7,13 +7,13 @@ from rustplus import RustSocket
 
 
 load_dotenv()
-IP = os.environ['IP']
-PORT = os.environ['PORT']
+RUST_SERVER_IP = os.environ['RUST_SERVER_IP']
+RUST_SERVER_PORT = os.environ['RUST_SERVER_PORT']
 STEAMID = int(os.environ['STEAMID'])
 PLAYERTOKEN = int(os.environ['PLAYERTOKEN'])
 
 app = FastAPI()
-rust_socket = RustSocket(IP, PORT, STEAMID, PLAYERTOKEN)
+rust_socket = RustSocket(RUST_SERVER_IP, RUST_SERVER_PORT, STEAMID, PLAYERTOKEN)
 
 
 @app.on_event('startup')
